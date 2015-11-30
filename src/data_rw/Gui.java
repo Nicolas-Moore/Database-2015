@@ -24,10 +24,10 @@ ArrayList<String> moboCompForms = new ArrayList<>();
     String[] heatSinks = new String[35];  // current compatible Heat Sinks
     String[] rams = new String[35];       // current compatible Random Access Memory
 
-    JLabel caseLabel = new JLabel("Cases:");
-    JLabel moboLabel = new JLabel("Mother Boards:");
+    JLabel caseLabel = new JLabel("Case:");
+    JLabel moboLabel = new JLabel("Motherboard:");
     JLabel cpuLabel = new JLabel("CPU:");
-    JLabel gpuLabel = new JLabel("GPU:");
+    JLabel gpuLabel = new JLabel("Video Card:");
     JLabel powerLabel = new JLabel("Power Supply:");
     JLabel hardDriveLabel = new JLabel("Hard Drive:");
     JLabel heatSinkLabel = new JLabel("Heat Sink:");

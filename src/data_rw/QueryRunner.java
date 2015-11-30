@@ -244,7 +244,7 @@ public class QueryRunner {
             ResultSet psCompResultSet = statement.executeQuery(psQuery);
 
             while (psCompResultSet.next()) {
-                compPS[i] = psCompResultSet.getString("Manufacturer") + " " + psCompResultSet.getString("Model");
+                compPS[i] = psCompResultSet.getString("Manufacturer") + " " + psCompResultSet.getString("Model") + " [" + psCompResultSet.getString("Wattage")+"]";
                 i++;
             }
         } catch (SQLException ex) {
@@ -261,7 +261,7 @@ public class QueryRunner {
             ResultSet hdCompResultSet = statement.executeQuery(hdQuery);
 
             while (hdCompResultSet.next()) {
-                compHD[i] = hdCompResultSet.getString("Manufacturer") + " " + hdCompResultSet.getString("PartNum") + " [" + hdCompResultSet.getString("Capacity") + "]";
+                compHD[i] = hdCompResultSet.getString("Manufacturer") + " " + hdCompResultSet.getString("PartNum") + " [" + hdCompResultSet.getString("Capacity") + " GB]";
                 i++;
             }
         } catch (SQLException ex) {
