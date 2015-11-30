@@ -12,7 +12,8 @@ public class Gui implements ActionListener {
 
     JFrame guiFrame = new JFrame(); // Frame for holding our JPanes
 
-    final JPanel guiPanel = new JPanel();   // Panel for holding our Combo Boxes    
+    final JPanel guiPanel = new JPanel();   // Panel for holding our Combo Boxes  
+    private int selCase = 999;
     
 ArrayList<String> moboCompForms = new ArrayList<>();
     String[] cases = new String[35];      // current compatible Cases
@@ -103,15 +104,16 @@ ArrayList<String> moboCompForms = new ArrayList<>();
     @Override
     public void actionPerformed(ActionEvent e) {
         JComboBox cb = (JComboBox) e.getSource();
+        //int selCase = 999;
         if (cb == caseCombo) {
-            int selCase =  cb.getSelectedIndex();
+            selCase =  cb.getSelectedIndex();
             updateMobos(qr.getMobos(qr.caseManu[selCase], qr.caseMod[selCase])); 
         } 
         
-        if (cb == moboCombo) {
+        if (cb == moboCombo && mobos[0] != null) {
             int selMobo =  cb.getSelectedIndex();
             updateCPUS(qr.getCpus(qr.moboSocket[selMobo])); 
-            updateGPUS(qr.getGpus(qr.caseVidLen[selMobo]));
+            updateGPUS(qr.getGpus(qr.caseVidLen[selCase]));
             updateRAM(qr.getRam(qr.moboManu[selMobo], qr.moboPart[selMobo], qr.moboMemType[selMobo], qr.moboMemSlot[selMobo]));
             updatePSUS(qr.getPsus(qr.moboForm[selMobo]));
             updateHardDrive(qr.getHardDrives());
